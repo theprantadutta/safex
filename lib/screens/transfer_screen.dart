@@ -195,7 +195,7 @@ class _TransferScreenState extends State<TransferScreen>
               Container(
                 padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: config.color.withOpacity(0.1),
+                  color: config.color.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(config.icon, color: config.color, size: 24),
@@ -210,7 +210,7 @@ class _TransferScreenState extends State<TransferScreen>
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         blurRadius: 10,
                         offset: Offset(0, 2),
                       ),
@@ -234,7 +234,7 @@ class _TransferScreenState extends State<TransferScreen>
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         blurRadius: 10,
                         offset: Offset(0, 2),
                       ),
@@ -277,7 +277,7 @@ class _TransferScreenState extends State<TransferScreen>
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 20,
             offset: Offset(0, 4),
           ),
@@ -337,7 +337,7 @@ class _TransferScreenState extends State<TransferScreen>
     if (showQRGenerator) return _buildQRGenerator();
 
     return SingleChildScrollView(
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.symmetric(horizontal: 12),
       child: Column(
         children: [
           if (selectedTransactionType != 'Receive') _buildAmountInput(),
@@ -349,6 +349,7 @@ class _TransferScreenState extends State<TransferScreen>
           _buildActionButton(),
           SizedBox(height: 20),
           _buildRecentTransactions(),
+          SizedBox(height: 20),
         ],
       ),
     );
@@ -362,7 +363,7 @@ class _TransferScreenState extends State<TransferScreen>
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 20,
             offset: Offset(0, 4),
           ),
@@ -434,7 +435,7 @@ class _TransferScreenState extends State<TransferScreen>
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 20,
             offset: Offset(0, 4),
           ),
@@ -610,7 +611,8 @@ class _TransferScreenState extends State<TransferScreen>
               color: Color(0xFF94A3B8),
               size: 20,
             ),
-            border: OutlineInputBorder(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+            enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
               borderSide: BorderSide(color: Color(0xFFE2E8F0)),
             ),
@@ -645,8 +647,8 @@ class _TransferScreenState extends State<TransferScreen>
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: isSelected
-              ? transactionConfigs[selectedTransactionType]!.color.withOpacity(
-                  0.1,
+              ? transactionConfigs[selectedTransactionType]!.color.withValues(
+                  alpha: 0.1,
                 )
               : Color(0xFFF8FAFC),
           borderRadius: BorderRadius.circular(12),
@@ -663,7 +665,7 @@ class _TransferScreenState extends State<TransferScreen>
               width: 48,
               height: 48,
               decoration: BoxDecoration(
-                color: contact.color.withOpacity(0.1),
+                color: contact.color.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Center(
@@ -725,7 +727,8 @@ class _TransferScreenState extends State<TransferScreen>
           color: Color(0xFF94A3B8),
           size: 20,
         ),
-        border: OutlineInputBorder(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+        enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(color: Color(0xFFE2E8F0)),
         ),
@@ -851,7 +854,9 @@ class _TransferScreenState extends State<TransferScreen>
         margin: EdgeInsets.only(bottom: 8),
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: isSelected ? wallet.color.withOpacity(0.1) : Color(0xFFF8FAFC),
+          color: isSelected
+              ? wallet.color.withValues(alpha: 0.1)
+              : Color(0xFFF8FAFC),
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             color: isSelected ? wallet.color : Colors.transparent,
@@ -864,7 +869,7 @@ class _TransferScreenState extends State<TransferScreen>
               width: 48,
               height: 48,
               decoration: BoxDecoration(
-                color: wallet.color.withOpacity(0.1),
+                color: wallet.color.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Center(
@@ -981,8 +986,8 @@ class _TransferScreenState extends State<TransferScreen>
         padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
           color: isSelected
-              ? transactionConfigs[selectedTransactionType]!.color.withOpacity(
-                  0.1,
+              ? transactionConfigs[selectedTransactionType]!.color.withValues(
+                  alpha: 0.1,
                 )
               : Color(0xFFF8FAFC),
           borderRadius: BorderRadius.circular(12),
@@ -999,7 +1004,7 @@ class _TransferScreenState extends State<TransferScreen>
               width: 48,
               height: 48,
               decoration: BoxDecoration(
-                color: Color(0xFF475569).withOpacity(0.1),
+                color: Color(0xFF475569).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(account.icon, color: Color(0xFF475569), size: 24),
@@ -1097,7 +1102,7 @@ class _TransferScreenState extends State<TransferScreen>
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 20,
             offset: Offset(0, 4),
           ),
@@ -1122,6 +1127,9 @@ class _TransferScreenState extends State<TransferScreen>
               hintText:
                   'What\'s this ${selectedTransactionType.toLowerCase()} for?',
               border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
                 borderSide: BorderSide(color: Color(0xFFE2E8F0)),
               ),
@@ -1226,7 +1234,7 @@ class _TransferScreenState extends State<TransferScreen>
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withValues(alpha: 0.04),
             blurRadius: 20,
             offset: Offset(0, 4),
           ),
@@ -1282,7 +1290,7 @@ class _TransferScreenState extends State<TransferScreen>
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: transaction.color.withOpacity(0.1),
+              color: transaction.color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(
@@ -1328,8 +1336,8 @@ class _TransferScreenState extends State<TransferScreen>
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                 decoration: BoxDecoration(
                   color: isReceived
-                      ? Color(0xFF10B981).withOpacity(0.1)
-                      : Color(0xFFEF4444).withOpacity(0.1),
+                      ? Color(0xFF10B981).withValues(alpha: 0.1)
+                      : Color(0xFFEF4444).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -1361,7 +1369,7 @@ class _TransferScreenState extends State<TransferScreen>
               borderRadius: BorderRadius.circular(24),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.06),
+                  color: Colors.black.withValues(alpha: 0.06),
                   blurRadius: 30,
                   offset: Offset(0, 8),
                 ),
@@ -1373,7 +1381,7 @@ class _TransferScreenState extends State<TransferScreen>
                   width: 80,
                   height: 80,
                   decoration: BoxDecoration(
-                    color: config.color.withOpacity(0.1),
+                    color: config.color.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Icon(config.icon, size: 40, color: config.color),
@@ -1583,7 +1591,7 @@ class _TransferScreenState extends State<TransferScreen>
                         Icon(
                           Icons.qr_code_scanner_rounded,
                           size: 80,
-                          color: Colors.white.withOpacity(0.8),
+                          color: Colors.white.withValues(alpha: 0.8),
                         ),
                         SizedBox(height: 16),
                         Text(
@@ -1598,7 +1606,7 @@ class _TransferScreenState extends State<TransferScreen>
                         Text(
                           'Camera would be here',
                           style: TextStyle(
-                            color: Colors.white.withOpacity(0.7),
+                            color: Colors.white.withValues(alpha: 0.7),
                             fontSize: 14,
                           ),
                         ),
@@ -1676,7 +1684,7 @@ class _TransferScreenState extends State<TransferScreen>
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.06),
+                    color: Colors.black.withValues(alpha: 0.06),
                     blurRadius: 30,
                     offset: Offset(0, 8),
                   ),
@@ -1688,7 +1696,7 @@ class _TransferScreenState extends State<TransferScreen>
                     width: 60,
                     height: 60,
                     decoration: BoxDecoration(
-                      color: config.color.withOpacity(0.1),
+                      color: config.color.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Icon(config.icon, size: 30, color: config.color),
@@ -1788,7 +1796,7 @@ class _TransferScreenState extends State<TransferScreen>
               width: 60,
               height: 60,
               decoration: BoxDecoration(
-                color: config.color.withOpacity(0.1),
+                color: config.color.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(40),
               ),
               child: CircularProgressIndicator(
@@ -1836,7 +1844,7 @@ class _TransferScreenState extends State<TransferScreen>
               width: 80,
               height: 80,
               decoration: BoxDecoration(
-                color: Color(0xFF10B981).withOpacity(0.1),
+                color: Color(0xFF10B981).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(40),
               ),
               child: Icon(
@@ -1892,7 +1900,7 @@ class _TransferScreenState extends State<TransferScreen>
   String _getSuccessMessage() {
     switch (selectedTransactionType) {
       case 'Send':
-        return '\${_amountController.text} sent to ${_getRecipientValue()}';
+        return '\$${_amountController.text} sent to ${_getRecipientValue()}';
       case 'Receive':
         return 'QR code generated successfully';
       case 'Request':

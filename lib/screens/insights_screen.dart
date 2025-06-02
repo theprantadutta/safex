@@ -106,7 +106,7 @@ class _InsightsScreenState extends State<InsightsScreen>
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.deepPurple.withOpacity(0.1),
+                      color: Colors.deepPurple.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Icon(
@@ -127,7 +127,7 @@ class _InsightsScreenState extends State<InsightsScreen>
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.05),
+                            color: Colors.black.withValues(alpha: 0.05),
                             blurRadius: 10,
                             offset: const Offset(0, 2),
                           ),
@@ -173,7 +173,7 @@ class _InsightsScreenState extends State<InsightsScreen>
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.08),
+            color: Colors.black.withValues(alpha: 0.08),
             blurRadius: 20,
             offset: const Offset(0, 4),
           ),
@@ -264,12 +264,12 @@ class _InsightsScreenState extends State<InsightsScreen>
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: color.withOpacity(0.1),
+            color: color.withValues(alpha: 0.1),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
         ],
-        border: Border.all(color: color.withOpacity(0.1)),
+        border: Border.all(color: color.withValues(alpha: 0.1)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -277,7 +277,7 @@ class _InsightsScreenState extends State<InsightsScreen>
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(icon, color: color, size: 24),
@@ -313,7 +313,7 @@ class _InsightsScreenState extends State<InsightsScreen>
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -445,7 +445,7 @@ class _InsightsScreenState extends State<InsightsScreen>
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -533,7 +533,7 @@ class _InsightsScreenState extends State<InsightsScreen>
                           gradient: LinearGradient(
                             colors: [
                               colors[index],
-                              colors[index].withOpacity(0.7),
+                              colors[index].withValues(alpha: 0.7),
                             ],
                           ),
                           borderRadius: BorderRadius.circular(4),
@@ -558,7 +558,7 @@ class _InsightsScreenState extends State<InsightsScreen>
           }),
         ],
       ),
-    ).animate().fadeIn(delay: 1200.ms).slideY(begin: 0.2);
+    ).animate().fadeIn(delay: 600.ms).slideY(begin: 0.2);
   }
 
   Widget _buildSpendingTrend() {
@@ -569,7 +569,7 @@ class _InsightsScreenState extends State<InsightsScreen>
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
@@ -677,8 +677,8 @@ class _InsightsScreenState extends State<InsightsScreen>
                       show: true,
                       gradient: LinearGradient(
                         colors: [
-                          const Color(0xFF667EEA).withOpacity(0.3),
-                          const Color(0xFF764BA2).withOpacity(0.1),
+                          const Color(0xFF667EEA).withValues(alpha: 0.3),
+                          const Color(0xFF764BA2).withValues(alpha: 0.1),
                         ],
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
