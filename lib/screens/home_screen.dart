@@ -69,6 +69,7 @@ class HomeScreen extends StatelessWidget {
                         colors: [Color(0xFF3B82F6), Color(0xFF1D4ED8)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
+                        stops: [0.1, 0.9],
                       ),
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [

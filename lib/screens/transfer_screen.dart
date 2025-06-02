@@ -1502,8 +1502,9 @@ class _TransferScreenState extends State<TransferScreen>
 
   String _getRecipientValue() {
     if (selectedContact.isNotEmpty) return selectedContact;
-    if (_customContactController.text.isNotEmpty)
+    if (_customContactController.text.isNotEmpty) {
       return _customContactController.text;
+    }
     if (selectedBank.isNotEmpty) return selectedBank;
     if (selectedCrypto.isNotEmpty) return selectedCrypto;
     return 'Unknown';
